@@ -5,7 +5,8 @@ LOCAL_FOLDER=`basename "$PWD"`
 
 correct="n"
 
-mkdir .vscode
+mkdir .vscode > /dev/null 2>&1
+
 cp .devcontainer/json_templates/sftp.json .vscode/sftp.json
 cp .devcontainer/json_templates/devcontainer.json .devcontainer/devcontainer.json
 
@@ -26,12 +27,12 @@ while [[ ${correct} != "y" ]]; do
     fi
 done
 
-sed -i "s/\$\{UTLN\}/${UTLN}/g" .devcontainer/devcontainer.json
-sed -i "s/\$\{UTLN\}/${UTLN}/g" .vscode/sftp.json
+sed -i "s/\$UTLN/${UTLN}/g" .devcontainer/devcontainer.json
+sed -i "s/\$UTLN/${UTLN}/g" .vscode/sftp.json
 
-sed -i "s/\$\{COURSE_NUM\}/${COURSE_NUM}/g" .devcontainer/devcontainer.json
-sed -i "s/\$\{COURSE_NUM\}/${COURSE_NUM}/g" .vscode/sftp.json
+sed -i "s/\$COURSE_NUM/${COURSE_NUM}/g" .devcontainer/devcontainer.json
+sed -i "s/\$COURSE_NUM/${COURSE_NUM}/g" .vscode/sftp.json
 
-sed -i "s/\$\{LOCAL_FOLDER\}/${LOCAL_FOLDER}/g" .devcontainer/devcontainer.json
-sed -i "s/\$\{LOCAL_FOLDER\}/${LOCAL_FOLDER}/g" .vscode/sftp.json
+sed -i "s/\$LOCAL_FOLDER/${LOCAL_FOLDER}/g" .devcontainer/devcontainer.json
+sed -i "s/\$LOCAL_FOLDER/${LOCAL_FOLDER}/g" .vscode/sftp.json
 

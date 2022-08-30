@@ -1,11 +1,11 @@
 {
-    "name": "${LOCAL_FOLDER}",
+    "name": "$LOCAL_FOLDER",
     "build": {
               "dockerfile": "Dockerfile", 
-              "args": { "UTLN": "${UTLN}", "COURSE_NUM": "${COURSE_NUM}", "LOCAL_FOLDER": "${LOCAL_FOLDER}" }
+              "args": { "UTLN": "$UTLN", "COURSE_NUM": "$COURSE_NUM", "LOCAL_FOLDER": "$LOCAL_FOLDER" }
              },
     "extensions": ["xaver.clang-format", "liximomo.sftp"],        
-    "remoteUser": "${UTLN}",
+    "remoteUser": "$UTLN",
     "settings": {
         "clang-format.executable": "clang-format",
         "clang-format.style": "{ AlignConsecutiveDeclarations: true, PointerAlignment: Right, AccessModifierOffset: -4, AlignAfterOpenBracket: Align, AlignConsecutiveAssignments: true, AlignEscapedNewlines: Left, AlignOperands: true, AlignTrailingComments: true, AllowShortBlocksOnASingleLine: true, AllowShortCaseLabelsOnASingleLine: true, AllowShortFunctionsOnASingleLine: Inline, AllowShortIfStatementsOnASingleLine: true, AllowShortLoopsOnASingleLine: false, AlwaysBreakAfterReturnType: None, AlwaysBreakBeforeMultilineStrings: false, AlwaysBreakTemplateDeclarations: Yes, BinPackArguments: true, BinPackParameters: true, BreakBeforeBinaryOperators: None, BreakBeforeBraces: Attach, BreakConstructorInitializers: AfterColon, BreakStringLiterals: true, ColumnLimit: 80, ConstructorInitializerAllOnOneLineOrOnePerLine: false, IndentWidth: 4, Language: Cpp, MaxEmptyLinesToKeep: 2, ReflowComments: true, SortUsingDeclarations: true, SpaceAfterTemplateKeyword: false, SpaceBeforeAssignmentOperators: true, SpaceBeforeCtorInitializerColon: true, SpaceBeforeInheritanceColon: true, SpaceBeforeParens: ControlStatements, SpaceBeforeRangeBasedForLoopColon: true, TabWidth: 4, UseTab: Never }",
