@@ -1,5 +1,8 @@
 #!/bin/bash
 
+COURSE_NUM="175"
+LOCAL_FOLDER=`basename "$PWD"`
+
 correct="n"
 
 cp .devcontainer_orig.json devcontainer.json
@@ -24,4 +27,10 @@ done
 
 sed -i "s/\$\{UTLN\}/${UTLN}/g" devcontainer.json
 sed -i "s/\$\{UTLN\}/${UTLN}/g" ../.vscode/sftp.json
+
+sed -i "s/\$\{COURSE_NUM\}/${COURSE_NUM}/g" ../.vscode/sftp.json
+sed -i "s/\$\{COURSE_NUM\}/${COURSE_NUM}/g" devcontainer.json
+
+sed -i "s/\$\{LOCAL_FOLDER\}/${LOCAL_FOLDER}/g" devcontainer.json
+sed -i "s/\$\{LOCAL_FOLDER\}/${LOCAL_FOLDER}/g" ../.vscode/sftp.json
 
