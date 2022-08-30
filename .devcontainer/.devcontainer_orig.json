@@ -4,7 +4,7 @@
               "dockerfile": "Dockerfile", 
               "args": { "utln": "UTLN", "course": "COURSE_NUM" }
              },
-    "extensions": "xaver.clang-format", "liximomo.sftp"],        
+    "extensions": ["xaver.clang-format", "liximomo.sftp"],        
     "remoteUser": "UTLN",
     "settings": {
         "clang-format.executable": "clang-format",
