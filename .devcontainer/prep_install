@@ -22,5 +22,6 @@ while [[ ${correct} != "y" ]]; do
     fi
 done
 
-sed -i "s/YOUR_UTLN_HERE/$utln/g" devcontainer.json
-sed -i "s/YOUR_UTLN_HERE/$utln/g" ../.vscode/sftp.json
+sed -i "s/UTLN/$utln/g" devcontainer.json
+sed -i "s/UTLN/$utln/g" ../.vscode/sftp.json
+
