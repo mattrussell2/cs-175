@@ -10,7 +10,7 @@ RUN apt-get update -y && \
             lsb-release build-essential software-properties-common \
             wget git ssh sudo time \                                        
             clang-12 clang-format valgrind \
-            python3-pip jq
+            python3-pip jq x11-apps
 
 # install opengl
 RUN apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev libglew-dev
