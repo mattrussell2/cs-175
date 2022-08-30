@@ -1,0 +1,26 @@
+#!/bin/bash
+
+correct="n"
+
+cp .devcontainer_orig.json devcontainer.json
+cp -r .vscode_original ../.vscode
+
+while [[ ${correct} != "y" ]]; do    
+    echo "Please enter your utln for homework.cs.tufts.edu"
+    read utln
+    echo "You wrote ${utln}"
+    echo "Was this correct? (y/n)"
+    read correct
+
+    while [[ ${correct} != "y" && ${correct} != "n" ]]; do
+        echo "please enter y or n"
+        read correct
+    done
+
+    if [[ ${correct} == "y" ]]; then
+        echo "success! if you entered the wrong info, please run this script again"
+    fi
+done
+
+sed -i "s/YOUR_UTLN_HERE/$utln/g" devcontainer.json
+sed -i "s/YOUR_UTLN_HERE/$utln/g" ../.vscode/sftp.json

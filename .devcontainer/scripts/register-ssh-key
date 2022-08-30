@@ -1,0 +1,25 @@
+#!/bin/bash
+
+cat << EOF 
+
+Hello! This script will:
+1. generate your ssh public and private keys
+2. register your public key with your account on the homework server
+
+These steps will enable password-less access to the homework server from this development container. 
+
+You may ignore warnings/error messages that arise, HOWEVER, please
+1. enter 'yes' if asked
+2. enter your password if prompted
+
+Note that the password requested is NOT the one you use for sis.uit.tufts.edu -- see here for details: https://www.eecs.tufts.edu/~accounts/
+
+EOF
+
+read -p "Press enter to continue"
+
+echo ""
+
+< /dev/zero ssh-keygen -q -N ""
+
+ssh-copy-id ${utln}@homework.cs.tufts.edu

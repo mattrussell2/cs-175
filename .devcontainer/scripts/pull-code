@@ -1,0 +1,20 @@
+#!/bin/bash 
+echo -e "\nAbout to copy remote starter code for assignment $1\n"
+
+if [ -d "$1" ];
+then
+	echo "$1 folder already exists on your local system."
+    echo "Are you sure you want to overwrite your local files? (y/n) "
+    read yn
+    while [[ "$yn" != "y" && "$yn" != "n" ]]; 
+    do
+        echo -e "Enter one of (y/n): "
+        read yn
+    done
+    if [ "$yn" == "n" ]; then
+        echo "Quitting..."
+        exit 1
+    fi 
+fi
+
+scp -r "${utln}@homework.cs.tufts.edu:/comp/15/files/$1" "."
