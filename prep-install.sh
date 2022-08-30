@@ -5,8 +5,9 @@ LOCAL_FOLDER=`basename "$PWD"`
 
 correct="n"
 
-cp .devcontainer_orig.json devcontainer.json
-cp -r .vscode_original ../.vscode
+mkdir .vscode
+cp .devcontainer/.sftp.json .vscode/sftp.json
+cp .devcontainer/.devcontainer.json .devcontainer/devcontainer.json
 
 while [[ ${correct} != "y" ]]; do    
     echo "Please enter your utln for homework.cs.tufts.edu"
@@ -25,12 +26,12 @@ while [[ ${correct} != "y" ]]; do
     fi
 done
 
-sed -i "s/\$\{UTLN\}/${UTLN}/g" devcontainer.json
-sed -i "s/\$\{UTLN\}/${UTLN}/g" ../.vscode/sftp.json
+sed -i "s/\$\{UTLN\}/${UTLN}/g" .devcontainer/devcontainer.json
+sed -i "s/\$\{UTLN\}/${UTLN}/g" .vscode/sftp.json
 
-sed -i "s/\$\{COURSE_NUM\}/${COURSE_NUM}/g" ../.vscode/sftp.json
-sed -i "s/\$\{COURSE_NUM\}/${COURSE_NUM}/g" devcontainer.json
+sed -i "s/\$\{COURSE_NUM\}/${COURSE_NUM}/g" .devcontainer/devcontainer.json
+sed -i "s/\$\{COURSE_NUM\}/${COURSE_NUM}/g" .vscode/sftp.json
 
-sed -i "s/\$\{LOCAL_FOLDER\}/${LOCAL_FOLDER}/g" devcontainer.json
-sed -i "s/\$\{LOCAL_FOLDER\}/${LOCAL_FOLDER}/g" ../.vscode/sftp.json
+sed -i "s/\$\{LOCAL_FOLDER\}/${LOCAL_FOLDER}/g" .devcontainer/devcontainer.json
+sed -i "s/\$\{LOCAL_FOLDER\}/${LOCAL_FOLDER}/g" .vscode/sftp.json
 
