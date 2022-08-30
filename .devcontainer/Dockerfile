@@ -1,6 +1,8 @@
 FROM ubuntu:22.04
 
-ARG utln
+ARG UTLN
+ARG LOCAL_FOLDER
+ARG COURSE_NUM
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
@@ -20,10 +22,10 @@ RUN python3 -m pip install toml dataclasses tqdm filelock python_dateutil
 # use clang++
 RUN ln -s /usr/bin/clang++-12 /usr/bin/clang++
 
-RUN adduser --disabled-password --gecos "" ${utln} 
-RUN usermod -aG sudo ${utln}
+RUN adduser --disabled-password --gecos "" ${UTLN} 
+RUN usermod -aG sudo ${UTLN}
 
 RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN printf "export PS1=\"\\u@cs-175-local:\\W\\$ \"\n" >> /home/${utln}/.bashrc
-RUN printf "export utln=${utln}\n" >> /home/${utln}/.bashrc
-RUN printf "export PATH=\${PATH}:/workspaces/cs-175/.devcontainer/scripts\n" >> /home/$utln/.bashrc
+RUN printf "export PS1=\"\\u@${COURSE_NUM}-local:\\W\\$ \"\n" >> /home/${UTLN}/.bashrc
+RUN printf "export utln=${utln}\n" >> /home/${UTLN}/.bashrc
+RUN printf "export PATH=\${PATH}:/workspaces/${LOCAL_FOLDER}/.devcontainer/scripts\n" >> /home/${UTLN}/.bashrc
