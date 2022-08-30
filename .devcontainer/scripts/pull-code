@@ -17,4 +17,4 @@ then
     fi 
 fi
 
-scp -r "${utln}@homework.cs.tufts.edu:/comp/15/files/$1" "."
+scp -r "${utln}@homework.cs.tufts.edu:/comp/175/files/$1" "."

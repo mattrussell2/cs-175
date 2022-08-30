@@ -10,6 +10,9 @@ RUN apt-get update -y && \
             clang-12 clang-format valgrind \
             python3-pip jq
 
+# install opengl
+RUN apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev libglew-dev
+
 # install python packages
 RUN python3 -m pip install --upgrade pip
 RUN python3 -m pip install toml dataclasses tqdm filelock python_dateutil
@@ -21,6 +24,6 @@ RUN adduser --disabled-password --gecos "" ${utln}
 RUN usermod -aG sudo ${utln}
 
 RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN printf "export PS1=\"\\u@cs-15-local:\\W\\$ \"\n" >> /home/${utln}/.bashrc
+RUN printf "export PS1=\"\\u@cs-175-local:\\W\\$ \"\n" >> /home/${utln}/.bashrc
 RUN printf "export utln=${utln}\n" >> /home/${utln}/.bashrc
-RUN printf "export PATH=\${PATH}:/workspaces/cs-15/.devcontainer/scripts\n" >> /home/$utln/.bashrc
+RUN printf "export PATH=\${PATH}:/workspaces/cs-175/.devcontainer/scripts\n" >> /home/$utln/.bashrc

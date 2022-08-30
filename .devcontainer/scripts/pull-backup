@@ -21,7 +21,7 @@ function check-folder {
     fi    
 }
 
-remotefolder=`jq .remotePath /workspaces/cs-15/.vscode/sftp.json | tr '/' '\n' | tail -1 | rev | cut -c 2- | rev`
+remotefolder=`jq .remotePath /workspaces/cs-175/.vscode/sftp.json | tr '/' '\n' | tail -1 | rev | cut -c 2- | rev`
 if [ "$2" ];
 then
     if [ "$2" != "-s" ]; then
