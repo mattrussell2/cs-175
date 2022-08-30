@@ -25,7 +25,7 @@ RUN ln -s /usr/bin/clang++-12 /usr/bin/clang++
 RUN adduser --disabled-password --gecos "" ${UTLN} 
 RUN usermod -aG sudo ${UTLN}
 
-RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN printf "${UTLN}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN printf "export PS1=\"\\u@${COURSE_NUM}-local:\\W\\$ \"\n" >> /home/${UTLN}/.bashrc
 RUN printf "export UTLN=${UTLN}\n" >> /home/${UTLN}/.bashrc
 RUN printf "export PATH=\${PATH}:/workspaces/${LOCAL_FOLDER}/.devcontainer/scripts\n" >> /home/${UTLN}/.bashrc
