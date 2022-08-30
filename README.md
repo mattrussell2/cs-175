@@ -26,7 +26,7 @@ For Windows users, WSL2 is encouraged, however is not required. See the details 
 ## Download the Build Scripts
 Open a terminal in VSCode, and navigate to where you would like to make a `cs-175` folder for your coursework this semester. Then, run the following command in the integrated terminal
 ```
-git clone https://www.github.com/mattrussell2/graphics-docker.git cs-175
+git clone https://www.github.com/mattrussell2/cs-175
 ````
 
 This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-175`. In your terminal, run
