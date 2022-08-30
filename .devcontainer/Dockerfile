@@ -27,5 +27,5 @@ RUN usermod -aG sudo ${UTLN}
 
 RUN printf "${utln}  ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN printf "export PS1=\"\\u@${COURSE_NUM}-local:\\W\\$ \"\n" >> /home/${UTLN}/.bashrc
-RUN printf "export utln=${utln}\n" >> /home/${UTLN}/.bashrc
+RUN printf "export UTLN=${UTLN}\n" >> /home/${UTLN}/.bashrc
 RUN printf "export PATH=\${PATH}:/workspaces/${LOCAL_FOLDER}/.devcontainer/scripts\n" >> /home/${UTLN}/.bashrc
