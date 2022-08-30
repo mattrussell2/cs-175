@@ -21,16 +21,16 @@ function check-folder {
     fi    
 }
 
-remotefolder=`jq .remotePath /workspaces/cs-175/.vscode/sftp.json | tr '/' '\n' | tail -1 | rev | cut -c 2- | rev`
+remotefolder=`jq .remotePath /workspaces/${COURSE_FOLDER}/.vscode/sftp.json | tr '/' '\n' | tail -1 | rev | cut -c 2- | rev`
 if [ "$2" ];
 then
     if [ "$2" != "-s" ]; then
         echo -e "Usage: pull-backup hwname [-s snapshot_directory]"
     else 
         check-folder "$1-backup-$3"
-        scp -r "${utln}@homework.cs.tufts.edu:~/.snapshot/$3/${remotefolder}/$1/*" "./$1-backup-$3/"
+        scp -r "${UTLN}@homework.cs.tufts.edu:~/.snapshot/$3/${remotefolder}/$1/*" "./$1-backup-$3/"
     fi
 else    
     check-folder "$1-backup"
-    scp -r "${utln}@homework.cs.tufts.edu:~/${remotefolder}/$1/*" "./$1-backup/"
+    scp -r "${UTLN}@homework.cs.tufts.edu:~/${remotefolder}/$1/*" "./$1-backup/"
 fi
