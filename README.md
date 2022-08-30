@@ -31,6 +31,7 @@ git clone https://www.github.com/mattrussell2/graphics-docker.git cs-175
 
 This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-175`. In your terminal, run
 ```
+cd cs-175
 chmod +x prep-install.sh
 ./prep-install.sh
 ```
