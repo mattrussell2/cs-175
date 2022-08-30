@@ -22,4 +22,4 @@ echo ""
 
 < /dev/zero ssh-keygen -q -N ""
 
-ssh-copy-id ${utln}@homework.cs.tufts.edu
+ssh-copy-id ${UTLN}@homework.cs.tufts.edu
