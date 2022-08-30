@@ -1,5 +1,5 @@
 # Introduction
-The course setup for `cs-15` will be as follows:
+The course setup for `cs-175` will be as follows:
 1. You will be working in the `VSCode` IDE.
 2. You will be using the `remote-containers` extension in `VSCode`. 
 3. You will be using a provided `Docker` container with course files, scripts, etc. so you can easily access and work with the starter code, compile, run, and run `valgrind` on your local system, etc. 
@@ -24,14 +24,14 @@ For Windows users, WSL2 is encouraged, however is not required. See the details 
 
 # Installing the Docker Container
 ## Download the Build Scripts
-Open a terminal in VSCode, and navigate to where you would like to make a `cs-15` folder for your coursework this semester. Then, run the following command in the integrated terminal
+Open a terminal in VSCode, and navigate to where you would like to make a `cs-175` folder for your coursework this semester. Then, run the following command in the integrated terminal
 ```
-git clone https://www.github.com/mattrussell2/15-docker.git cs-15
+git clone https://www.github.com/mattrussell2/graphics-docker.git cs-175
 ````
 
-This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-15`. Now, in your terminal, run
+This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-175`. Now, in your terminal, run
 ```
-cd cs-15/.devcontainer # (NOTE: it's .devcontainer, not devcontainer)
+cd cs-175/.devcontainer # (NOTE: it's .devcontainer, not devcontainer)
 chmod +x prep_install
 ./prep_install
 ```
@@ -42,7 +42,7 @@ Great! Now, we have the blueprint for the container, but we need to build it. In
 
 *  Press `CTRL/CMD+ SHIFT + p` [CTRL on windows, CMD on mac] 
 *  Search for `Remote-containers: Open Folder in Container`
-*  Select the `cs-15` directory from the steps above
+*  Select the `cs-175` directory from the steps above
 *  The window should refresh - and the docker container will be built. 
 
 ## Notes
@@ -51,7 +51,7 @@ Great! Now, we have the blueprint for the container, but we need to build it. In
 * Feel free to press the button to view the logs and see what's happening - this step will take about 5-10m. It will only have to happen once. After the container is built, it'll be quick to load.
 * In rare cases, your system might hang at the very beginning (on step 2 or 3). If it's doing this, then run the command `rm ~/.docker/config.json` to remove the docker config file, and start over.      
 
-Once the installation is complete, you should see `Dev Container: cs-15` in the lower left corner of the `VSCode` window. Press the `+` symbol on the right-hand side of your terminal window to open a new terminal from within the Container.
+Once the installation is complete, you should see `Dev Container: cs-175` in the lower left corner of the `VSCode` window. Press the `+` symbol on the right-hand side of your terminal window to open a new terminal from within the Container.
 
 ## register-ssh-key
 Run the command
@@ -63,36 +63,36 @@ This will create an ssh-key for you, so you don't need to enter your password to
 ## Automatic Backups
 Excellent! Now, from within the development container in `VSCode`:
 
-0. Ensure your current working directory is `/workspaces/cs-15`
+0. Ensure your current working directory is `/workspaces/cs-175`
 1. Press `CTRL/CMD + SHIFT + p`
 2. Search for and select `SFTP: config`
 
-You should now see a file `sftp.json`, with various configuration options. You should not have to edit these (and so can close the file), unless you want to change the remote path. Currently, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-15/...`.
+You should now see a file `sftp.json`, with various configuration options. You should not have to edit these (and so can close the file), unless you want to change the remote path. Currently, every time that you save a file in your container, it will be automatically uploaded to the homework server under the path `/h/your_utln/cs-175/...`.
 
 To verify that backups are working:
 
 1. Create a file and make some minor edits to it.
 2. Save the file - the automatic backup only happens when you save!
 3. Run `ssh utln@homework.cs.tufts.edu`, where you replace `utln` with your utln. 
-4. run `cd cs-15`
+4. run `cd cs-175`
 5. run `ls`
 6. You should see the file you just created.
 7. run `exit` to quit from the homework server.
 
 ## Workflow
-Okay! For the future, anytime you want to work on `cs-15` stuff:
+Okay! For the future, anytime you want to work on `cs-175` stuff:
 1. Open `VSCode`
 2. Press `CTRL/CMD + SHIFT + p` 
 3. Select `Remote-containers: Open Folder in Container`
-4. Select the `cs-15` directory. 
+4. Select the `cs-175` directory. 
 5. Open a terminal and work! 
 
-Pro tip: Sometimes `VSCode` will open automatically to your container if it's the last place you were working. If not, after opening `VSCode`, you can usually simply click on the `cs-15 [Dev Container]` link instead of doing steps 2-4 above.
+Pro tip: Sometimes `VSCode` will open automatically to your container if it's the last place you were working. If not, after opening `VSCode`, you can usually simply click on the `cs-175 [Dev Container]` link instead of doing steps 2-4 above.
 
 ### Notes on the development environment
-* When loading into the container in the way described above, you have direct access to the folders/files that live within the `cs-15` folder on your hard drive. So if you create/edit files in the `cs-15` directory in your dev container, then you'll be able to see the updated files in your the folder browser of your operating system 'as normal'. Likewise, if you remove files from the folder browser, the'll disappear from your dev container as well. **From within the container you will not be able to browse through any files on your machine outside of the `cs-15` directory.** The container is meant only for `cs-15` stuff. This is done through what's called a 'bind mount' - if you want more detail (optional), check out [this link](https://docs.docker.com/storage/bind-mounts/). 
+* When loading into the container in the way described above, you have direct access to the folders/files that live within the `cs-175` folder on your hard drive. So if you create/edit files in the `cs-175` directory in your dev container, then you'll be able to see the updated files in your the folder browser of your operating system 'as normal'. Likewise, if you remove files from the folder browser, the'll disappear from your dev container as well. **From within the container you will not be able to browse through any files on your machine outside of the `cs-175` directory.** The container is meant only for `cs-175` stuff. This is done through what's called a 'bind mount' - if you want more detail (optional), check out [this link](https://docs.docker.com/storage/bind-mounts/). 
 * You have `sudo` access in this terminal (no password required). If you need to install any software, etc., run `sudo apt install xxxxxx`. Also, if you'd like to install `VSCode` extensions within the container, feel free to do so!
-* If for whatever reason you get 'lost' in the container, your files are located in `/workspaces/cs-15`. When you load into the container, you are not, as is usual on `UNIX` systems, in `~/` - you are in `/workspaces/cs-15`.
+* If for whatever reason you get 'lost' in the container, your files are located in `/workspaces/cs-175`. When you load into the container, you are not, as is usual on `UNIX` systems, in `~/` - you are in `/workspaces/cs-175`.
 
 # scripts
 We have written some scripts for you to be able to interface with the course files and your files on the halligan server. These are all available from within the container after you've installed it. Note! You will **not** be able to run these commands from a terminal ssh'd into the homework server, nor will they work from a 'regular' terminal on your local system. **They will only work from a terminal running in the dev container you've just built.**
@@ -147,7 +147,7 @@ The relevant homework files from that .snapshot will be copied to your local sys
 
 ## 7-17-2022
 * updated pull-backup to dynamically pull the remote folder from the sftp.json file. 
-* updated readme to reflect the need to be in /workspaces/cs-15 before running config for sftp.
+* updated readme to reflect the need to be in /workspaces/cs-175 before running config for sftp.
 
 <!-- ## jumbotest
 This command is to use our in-house unit testing framework. See here for details: https://gitlab.cs.tufts.edu/mrussell/JumboTest -->
