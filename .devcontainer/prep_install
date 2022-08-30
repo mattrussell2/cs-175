@@ -7,8 +7,8 @@ cp -r .vscode_original ../.vscode
 
 while [[ ${correct} != "y" ]]; do    
     echo "Please enter your utln for homework.cs.tufts.edu"
-    read utln
-    echo "You wrote ${utln}"
+    read UTLN
+    echo "You wrote ${UTLN}"
     echo "Was this correct? (y/n)"
     read correct
 
@@ -22,6 +22,6 @@ while [[ ${correct} != "y" ]]; do
     fi
 done
 
-sed -i "s/UTLN/$utln/g" devcontainer.json
-sed -i "s/UTLN/$utln/g" ../.vscode/sftp.json
+sed -i "s/\$\{UTLN\}/${UTLN}/g" devcontainer.json
+sed -i "s/\$\{UTLN\}/${UTLN}/g" ../.vscode/sftp.json
 
