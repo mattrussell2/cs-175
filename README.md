@@ -29,11 +29,10 @@ Open a terminal in VSCode, and navigate to where you would like to make a `cs-17
 git clone https://www.github.com/mattrussell2/graphics-docker.git cs-175
 ````
 
-This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-175`. Now, in your terminal, run
+This will clone the repository (download all of the files required to build the container), and put everything into a folder named `cs-175`. In your terminal, run
 ```
-cd cs-175/.devcontainer # (NOTE: it's .devcontainer, not devcontainer)
-chmod +x prep_install
-./prep_install
+chmod +x prep-install.sh
+./prep-install.sh
 ```
 Enter your eecs `utln` when prompted. 
 
