@@ -6,8 +6,8 @@ LOCAL_FOLDER=`basename "$PWD"`
 correct="n"
 
 mkdir .vscode
-cp .devcontainer/.sftp.json .vscode/sftp.json
-cp .devcontainer/.devcontainer.json .devcontainer/devcontainer.json
+cp .devcontainer/json_templates/sftp.json .vscode/sftp.json
+cp .devcontainer/json_templates/devcontainer.json .devcontainer/devcontainer.json
 
 while [[ ${correct} != "y" ]]; do    
     echo "Please enter your utln for homework.cs.tufts.edu"
