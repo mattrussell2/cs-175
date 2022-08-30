@@ -2,7 +2,7 @@
     "name": "${LOCAL_FOLDER}",
     "build": {
               "dockerfile": "Dockerfile", 
-              "args": { "UTLN": "${UTLN}", "COURSE_NUM": "${COURSE_NUM}", "COURSE_FOLDER": "${COURSE_FOLDER}" }
+              "args": { "UTLN": "${UTLN}", "COURSE_NUM": "${COURSE_NUM}", "LOCAL_FOLDER": "${LOCAL_FOLDER}" }
              },
     "extensions": ["xaver.clang-format", "liximomo.sftp"],        
     "remoteUser": "${UTLN}",
