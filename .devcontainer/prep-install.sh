@@ -27,12 +27,12 @@ while [[ ${correct} != "y" ]]; do
     fi
 done
 
-sed -i "s/\$UTLN/${UTLN}/g" .devcontainer/devcontainer.json
-sed -i "s/\$UTLN/${UTLN}/g" .vscode/sftp.json
+sed -i'' -e "s/\$UTLN/${UTLN}/g" .devcontainer/devcontainer.json
+sed -i'' -e "s/\$UTLN/${UTLN}/g" .vscode/sftp.json
 
-sed -i "s/\$COURSE_NUM/${COURSE_NUM}/g" .devcontainer/devcontainer.json
-sed -i "s/\$COURSE_NUM/${COURSE_NUM}/g" .vscode/sftp.json
+sed -i'' -e "s/\$COURSE_NUM/${COURSE_NUM}/g" .devcontainer/devcontainer.json
+sed -i'' -e "s/\$COURSE_NUM/${COURSE_NUM}/g" .vscode/sftp.json
 
-sed -i "s/\$LOCAL_FOLDER/${LOCAL_FOLDER}/g" .devcontainer/devcontainer.json
-sed -i "s/\$LOCAL_FOLDER/${LOCAL_FOLDER}/g" .vscode/sftp.json
+sed -i'' -e "s/\$LOCAL_FOLDER/${LOCAL_FOLDER}/g" .devcontainer/devcontainer.json
+sed -i'' -e "s/\$LOCAL_FOLDER/${LOCAL_FOLDER}/g" .vscode/sftp.json
 
