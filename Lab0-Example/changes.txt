@@ -1,0 +1,32 @@
+mrussell edits 2020
+    Added gl_silence_deprecation define at top of file. 
+    FL/glut.h -> FL/glut.H
+    Made tabs 4 spaces
+    Added comments to better describe the various classes used here. 
+    Removed argc, argv from main(), as they are unused.
+
+    Given the small size of the classes, moved definitions inside class... 
+    I think this makes the code more readable w/ two classes in the one file. 
+
+    MyGlCanvas:
+     Created functions to set up opengl lights and camera, and called these 
+         from a new function: establish_gl_context. 
+     Made wireframe a bool...slightly easier to understand. 
+   
+    MyAppWindow:
+     Removed unused void* userdata arguments from FL function parameters. 
+     Cast FL::add_idle paramater to be (Fl_Idle_Handler)(void*) of the CB fn.
+     Made pack a private member variable of the MyAppWindow class. 
+     Made functions to create the various aspects of the pack, and called those
+         functions from the MyAppWindow constructor. 
+     Moved resizable() idle callback declaration into MyAppWindow constructor.
+     Added variable 'status' to receive output of Fl::run()...it just makes it 
+         clear that the run function runs, and it's status is returned. Not 
+         super efficient, but probably more comprehensible.  
+     Added MyAppWindow destructor. 
+     Renamed 'pack' variable to be 'control_panel'. 
+     Moved canvas and slider/button variables to private. 
+
+  ((Would rather try to refer to canvas->whatever inside the CB fns, instead of
+      having to do win->canvas->whatever, but CB function stuff with FLTK 
+      makes it impossible, i think....))

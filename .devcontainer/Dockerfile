@@ -13,7 +13,8 @@ RUN apt-get update -y && \
             python3-pip jq x11-apps
 
 # install opengl
-RUN apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev libglew-dev
+RUN apt-get install -y libglu1-mesa-dev freeglut3-dev mesa-common-dev libglew-dev 
+RUN apt-get install -y mesa-utils libgl1-mesa-glx fltk1.3-dev libglm-dev
 
 # install python packages
 RUN python3 -m pip install --upgrade pip

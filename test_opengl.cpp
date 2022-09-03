@@ -1,3 +1,7 @@
+/*  -lglut -lGLU -lGL */
+// defaults write org.xquartz.X11 enable_iglx -bool YES
+// xhost +localhost
+
 #include <GL/glut.h>
 
 void displayMe(void) {
